@@ -82,7 +82,6 @@ body {
 }
 
 
-
 .boton{
   justify-content: center;
   justify-items: center;
@@ -101,3 +100,21 @@ body {
 width: 700px;
 height: auto;
 }
+
+#products-page {
+  background-color: #dc7712;
+  
+}
+
+.card {
+  margin: 100px;
+  border-width: 3px;
+  border-color: #b1a9a1;
+  border-radius: 10px;
+
+}
+
+.parrafo, a {
+  color:#fff;
+}
+
