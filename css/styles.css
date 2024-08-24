@@ -45,6 +45,7 @@ body {
   text-align: center;
 }
 
+
 #jap_logo {
   width: 60%;
   height: auto;
@@ -96,6 +97,25 @@ body {
 }
 
 
+#mercado {
+
+  justify-content: start;
+  width: 650px;
+  height: auto;
+  object-position: center;
+  
+}
+
+width: 700px;
+height: auto;
+}
+
+#products-page {
+  background-color: #dc7712;
+  
+}
+
+
 .card {
   margin: 20px;
   border-radius: 20px;
@@ -116,6 +136,8 @@ body {
 }
 
 
+
 #parrafo, a {
   color: black;
 }
+
