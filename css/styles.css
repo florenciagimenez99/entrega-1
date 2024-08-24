@@ -82,6 +82,7 @@ body {
   background-color: rgb(243, 201, 208);
 }
 
+
 .boton{
   justify-items: center;
   font-size: 1.1rem;
@@ -96,9 +97,33 @@ body {
 }
 
 #mercado {
+
   justify-content: start;
   width: 650px;
   height: auto;
   object-position: center;
   
 }
+
+width: 700px;
+height: auto;
+}
+
+#products-page {
+  background-color: #dc7712;
+  
+}
+
+.card {
+  margin: 100px;
+  border-width: 3px;
+  border-color: #b1a9a1;
+  border-radius: 10px;
+
+}
+
+.parrafo, a {
+  color:#000000;
+}
+
+
