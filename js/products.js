@@ -41,7 +41,7 @@ function mostrarAutos(products) {
              <div class="card">
   <div class="row g-0">
     <div class="col-md-4 d-flex justify-content-center align-items-center">
-      <img src="${element.image}" class="img-fluid" alt="${element.name}" style="max-width: 170px; height: auto;">
+      <img src="${element.image}" class="img-fluid" class="img-auto" alt="${element.name}" style="max-width: 170px; height: auto;">
     </div>
     <div class="col-md-8">
       <div class="card-body text-center">
