@@ -62,3 +62,10 @@ function mostrarAutos(products) {
         console.log(`Se han vendido: ${element.soldCount}`);
     });
 } 
+
+var nombreUsuario = localStorage.getItem('usuario');
+
+if (nombreUsuario) {
+    document.getElementById('usuarioBarra').textContent = nombreUsuario;
+}
+
