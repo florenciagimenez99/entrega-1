@@ -46,6 +46,7 @@ body {
 }
 
 
+
 #jap_logo {
   width: 60%;
   height: auto;
@@ -118,6 +119,7 @@ body {
   border-radius: 20px;
   border-color: gray;
   border-width: 3px;
+  overflow: hidden;
 }
 
 #mercado {
@@ -184,12 +186,22 @@ body {
 
   .img-auto{
     margin-top: 15px;
+    border-radius: 10px;
   }
 
   .star_bloque {
     display: none;
   }
+
+
 }
 
+
+#username {
+  display: flex;
+  justify-content: center;
+  color :  #dc7712;
+    align-items: center;
+}
 
 
