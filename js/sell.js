@@ -147,3 +147,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+
+var nombreUsuario = localStorage.getItem('usuario');
+
+if (nombreUsuario) {
+    document.getElementById('usuarioBarra').textContent = nombreUsuario;
+}
