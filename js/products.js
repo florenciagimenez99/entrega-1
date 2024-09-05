@@ -1,4 +1,4 @@
-let catAutos = "products.json"; 
+let catAutos = "https://japceibal.github.io/emercado-api/cats_products/101.json"; 
 
 let fetchJSONData = function(url) { 
     let result = {};
