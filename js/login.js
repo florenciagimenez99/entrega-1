@@ -17,3 +17,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        let usuario = document.getElementById('usuario').value;
+
+        if (usuario.trim() !== '') { 
+            localStorage.setItem('usuario', usuario);
+
+           
+            window.location.href = 'index.html'; 
+        } else {
+            alert("Por favor, ingresa un nombre de usuario.");
+        }
+    });
+});
+

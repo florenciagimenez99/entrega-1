@@ -1,4 +1,4 @@
-let catAutos = "products.json"; 
+let catAutos = "https://japceibal.github.io/emercado-api/cats_products/101.json"; 
 
 let fetchJSONData = function(url) { 
     let result = {};
@@ -62,3 +62,10 @@ function mostrarAutos(products) {
         console.log(`Se han vendido: ${element.soldCount}`);
     });
 } 
+
+var nombreUsuario = localStorage.getItem('usuario');
+
+if (nombreUsuario) {
+    document.getElementById('usuarioBarra').textContent = nombreUsuario;
+}
+
