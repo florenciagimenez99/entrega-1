@@ -1,5 +1,5 @@
-let catAutos = "https://japceibal.github.io/emercado-api/cats_products/101.json";
-let todosProductos = [];
+let catID = localStorage.getItem("catID"); 
+let catAutos = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
 
 let fetchJSONData = function(url) {
     let result = {};
