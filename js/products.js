@@ -99,7 +99,7 @@ function almacenamiento(elementId) {
 
     localStorage.setItem("productId", elementId);
 
-    window.location.href = '/product-info.html';
+    window.location.href = 'product-info.html';
 }
 
 
