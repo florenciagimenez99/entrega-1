@@ -1,74 +1,81 @@
-**{
+
+* { 
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .bloque {
-    display:flex;
-    height: 100vh;
-  }
 
-.star_bloque { 
+body {
+  font-family: Arial, sans-serif;
+}
+
+.bloque {
+  display: flex;
+  height: 100vh;
+}
+
+.star_bloque {
   display: flex;
   background-color: #fff;
   justify-content: start;
-  align-content:start;
+  align-content: start;
   width: 100%;
   height: 100%;
-  }
+}
 
-.end_bloque{
+.end_bloque {
   display: flex;
   background-color: #dc7712;
   padding: 20px;
   width: 100%;
   height: 100%;
   justify-content: center;
-  }
+}
 
-.formulario{
+.formulario {
   display: block;
   justify-content: center;
-  align-content:center;
+  align-content: center;
   width: 300px;
 }
-.caja-form{
+
+.caja-form {
   background-color: #ffff;
   border-radius: 8px;
-  padding: 40px; /*espaciado interno*/
+  padding: 40px;
+  /*espaciado interno*/
   box-shadow: 0 4px 8px #581301;
   height: auto;
   text-align: center;
 }
 
 
+
 #jap_logo {
   width: 60%;
   height: auto;
-  justify-items:center;
+  justify-items: center;
   margin-bottom: 30px;
 }
 
-.caja-form h2{ 
+.caja-form h2 {
   font-size: 2rem;
-  margin-bottom:1.5rem;
+  margin-bottom: 1.5rem;
   background-color: #fff;
 }
 
 .controles {
   position: relative;
 }
+
 .controles i {
   position: absolute;
   right: 5px;
   top: 11px;
   color: #dc7712;
 }
-.controles > input { 
+
+.controles>input {
   width: 100%;
   background: #fff;
   border-radius: 8px;
@@ -83,7 +90,7 @@ body {
   background-color: rgb(243, 201, 208);
 }
 
-.boton{
+.boton {
   justify-items: center;
   font-size: 1.1rem;
   background-color: #dc7712;
@@ -93,7 +100,7 @@ body {
   padding: 6px 15px;
   font-weight: 600;
   text-decoration: none;
-  
+
 }
 
 
@@ -103,16 +110,13 @@ body {
   width: 650px;
   height: auto;
   object-position: center;
-  
+
 }
 
-width: 700px;
-height: auto;
-}
 
 #products-page {
   background-color: #dc7712;
-  
+
 }
 
 
@@ -121,6 +125,7 @@ height: auto;
   border-radius: 20px;
   border-color: gray;
   border-width: 3px;
+  overflow: hidden;
 }
 
 #mercado {
@@ -128,16 +133,181 @@ height: auto;
   width: 650px;
   height: auto;
   object-position: center;
-  
+
 }
 
 #products-page {
   background-color: #dc7712;
 }
 
-
-
-#parrafo, a {
+#parrafo,
+a {
   color: black;
+}
+
+/* Resolución Estándar */
+@media screen and (min-width: 1366px) and (max-width: 768px) {
+  body {
+
+    background-color: #dc7712;
+    font-family: Arial, sans-serif;
+    margin-top: 10px
+  }
+
+  img-auto {
+    margin-top: 10px;
+  }
+
+}
+
+/* Resolución Tableta en Modo Vertical*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-color: #dc7712;
+    font-family: Arial, sans-serif;
+  }
+
+  #parrafo,
+  a {
+    font-size: 1em;
+  }
+
+  img-auto {
+    margin-top: 10px;
+  }
+
+  .star_bloque {
+    display: none;
+  }
+
+}
+
+
+/*Resolución Iphone SE*/
+@media screen and (min-width:320px) and (max-width:568px) {
+  body {
+    background-color: #dc7712;
+    font-family: Arial, sans-serif;
+  }
+
+  #parrafo,
+  a {
+    font-size: 1em;
+  }
+
+  .img-auto {
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+
+  .star_bloque {
+    display: none;
+  }
+}
+
+#controlesFiltro {
+  width: 100%;
+  display: inline;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.control {
+  padding: 5px 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.875rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.control:hover {
+  background-color: #005cb8;
+  color: #ffffff;
+}
+
+#username {
+  display: flex;
+  justify-content: center;
+  color: #dc7712;
+  align-items: center;
+}
+
+
+
+.product-info {
+  background-color: #d4c9c0;
+}
+
+.carouselExample {
+  position: relative;
+  flex: 1;
+}
+
+.carousel-inner {
+  max-width: 800px;
+  width: 800px;
+}
+
+.product-info-description {
+  flex: 1;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+#product-category {
+  font-size: 15px;
+}
+
+.borde {
+  max-width: 550px;
+  border: 2px solid rgb(192 184 173);
+  border-radius: .25rem;
+  background-color: rgb(245 235 222);
+  max-height: 1500px;
+  width: 450px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-info-description button {
+  background-color: #dc7712;
+  border-radius: 10px;
+  color: black;
+  width: 300px;
+}
+
+.product-info-description button:hover {
+  background-color: #ff6600;
+  color: black;
+}
+
+.product-info-description button:focus {
+  outline: none; 
+  box-shadow: none; 
+  background-color: #dc7712; 
+  color: black; 
+}
+
+.containerVendCat {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.cntd {
+  width: 50px;
+  background-color: rgb(245 235 222);
 }
 
