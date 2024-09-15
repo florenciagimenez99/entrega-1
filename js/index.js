@@ -20,3 +20,10 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "login.html";
     }
 });
+
+var nombreUsuario = localStorage.getItem('usuario');
+
+if (nombreUsuario) {
+    document.getElementById('usuarioBarra').textContent = nombreUsuario;
+}
+

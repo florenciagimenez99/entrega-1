@@ -4,6 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -30,22 +31,44 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="username">
+            <div id='usuarioBarra'> Nombre de usuario </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <main class="pb-5 container">
-   <!-- <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4> 
-      </div> 
-    </div> -->
-   <div id="mostrar"></div>
+    <div id="controlesFiltro" class="controls mb-4">
+      <div class="mb-3">
+        <label for="precioMin" class="form-label">Precio Mínimo:</label>
+        <input type="number" id="precioMin" class="form-control" placeholder="0">
+        <label for="precioMax" class="form-label mt-2">Precio Máximo:</label>
+        <input type="number" id="precioMax" class="form-control" placeholder="1000" step="500" min="500">
+        <button id="aplicarPrecio" class="btn btn-primary mt-2 control">Aplicar Filtro de Precio</button>
+      </div>
+      
+      <div>
+        <label for="ordenar" class="form-label">Ordenar por:</label>
+        <select id="ordenar" class="form-select">
+          <option value="menorAMayor">Precio menor a mayor</option>
+          <option value="mayorAMenor">Precio mayor a menor</option>
+        </select>
+        <button id="aplicarOrden" class="btn btn-primary mt-2 control">Aplicar Orden</button>
+      </div>
+    </div>
+
+    <div id="mostrar"></div>
+
+    <div id="cars-list"></div>
+      <!-- Los productos se cargarán aquí dinámicamente -->
+    </div>
+
+    <div id="mostrarProducto"></div>
   </main>
   <footer class="text-muted">
-    <div class="parrafo container" >
+    <div class="parrafo container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
