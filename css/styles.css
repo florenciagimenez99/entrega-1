@@ -136,14 +136,154 @@ body {
 
 }
 
-#products-page {
-  background-color: #dc7712;
-}
 
 #parrafo,
 a {
   color: black;
 }
+/*pagina de product.html*/
+
+.pb-5_container{
+  display:flex;
+}
+#controlesFiltro {
+  width: 300px; 
+  padding: 30px;
+  background-color: #dc7712;;
+  display: inline-block; 
+  align-items: start; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px; 
+  justify-content: start;
+  align-content:start;
+  color: #fff;
+}
+
+#mostrar{
+  display: block;
+  padding-left: 150px;
+}
+
+.control {
+  padding: 5px 10px;
+  margin: 5px 0; 
+  cursor: pointer; 
+  text-align: start; 
+  font-size: 0.875rem; 
+  border: 1px solid #ced4da; 
+  border-radius: 4px; 
+  background-color:#fff;
+  color: #dc7712;
+}
+
+.control:hover {
+  background-color:#dc7712;
+  color :#fff;
+  border:5px solid #fff;
+  border-radius: 4px;
+} 
+
+#username {
+  display: flex;
+  justify-content: center;
+  color :  #dc7712;
+  align-items: center;
+}
+.card {
+  margin: 20px;
+  border-radius: 20px;
+  border-color: gray;
+  border-width: 3px;
+  overflow: hidden;
+
+}
+#products-page {
+  background-color: #e2e2e2
+}
+  
+/*PRODUCT-INFO*/
+#product-category {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.product-info {
+  background-color: #d4c9c0;
+}
+
+.carouselExample {
+  position: relative;
+  flex: 1;
+}
+
+.carousel-inner {
+  max-width: 800px;
+  width: 800px;
+}
+
+.product-info-description {
+  flex: 1;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+
+.borde {
+  padding: 30px;
+  max-width: 550px;
+  border: 2px solid rgb(192 184 173);
+  border-radius: .25rem;
+  background-color: rgb(245 235 222);
+  max-height: 1500px;
+  width: 450px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.product-info-description button {
+  background-color: #dc7712;
+  border-radius: 10px;
+  color: black;
+  width: 300px;
+  position: absolute;
+  right: 70px;
+  bottom: 50px;
+
+}
+
+.product-info-description button:hover {
+  background-color: #ff6600;
+  color: black;
+}
+
+.product-info-description button:focus {
+  outline: none; 
+  box-shadow: none; 
+  background-color: #dc7712; 
+  color: black; 
+}
+
+.containerVendCat {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.cntd {
+  width: 50px;
+  background-color: rgb(245 235 222);
+  position: relative;
+  left: 20px;
+}
+
 
 /* Resolución Estándar */
 @media screen and (min-width: 1366px) and (max-width: 768px) {
@@ -205,109 +345,5 @@ a {
   }
 }
 
-#controlesFiltro {
-  width: 100%;
-  display: inline;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
 
-.control {
-  padding: 5px 10px;
-  margin: 5px 0;
-  cursor: pointer;
-  text-align: center;
-  font-size: 0.875rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-}
-
-.control:hover {
-  background-color: #005cb8;
-  color: #ffffff;
-}
-
-#username {
-  display: flex;
-  justify-content: center;
-  color: #dc7712;
-  align-items: center;
-}
-
-
-
-.product-info {
-  background-color: #d4c9c0;
-}
-
-.carouselExample {
-  position: relative;
-  flex: 1;
-}
-
-.carousel-inner {
-  max-width: 800px;
-  width: 800px;
-}
-
-.product-info-description {
-  flex: 1;
-}
-
-.container-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-}
-
-#product-category {
-  font-size: 15px;
-}
-
-.borde {
-  max-width: 550px;
-  border: 2px solid rgb(192 184 173);
-  border-radius: .25rem;
-  background-color: rgb(245 235 222);
-  max-height: 1500px;
-  width: 450px;
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.product-info-description button {
-  background-color: #dc7712;
-  border-radius: 10px;
-  color: black;
-  width: 300px;
-}
-
-.product-info-description button:hover {
-  background-color: #ff6600;
-  color: black;
-}
-
-.product-info-description button:focus {
-  outline: none; 
-  box-shadow: none; 
-  background-color: #dc7712; 
-  color: black; 
-}
-
-.containerVendCat {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.cntd {
-  width: 50px;
-  background-color: rgb(245 235 222);
-}
 
