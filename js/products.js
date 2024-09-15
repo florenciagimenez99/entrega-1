@@ -1,5 +1,5 @@
-let catAutos = "https://japceibal.github.io/emercado-api/cats_products/101.json";
-let todosProductos = [];
+let catID = localStorage.getItem("catID"); 
+let catAutos = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
 
 let fetchJSONData = function(url) {
     let result = {};
@@ -62,7 +62,7 @@ function mostrarProducts(products) {
 
     products.forEach((element) => {
         let cardHTML = `
-            <div class="card">
+            <div class="card" onclick='almacenamiento(${element.id})'>
                 <div class="row g-0">
                     <div class="col-md-4 d-flex justify-content-center align-items-center">
                         <img src="${element.image}" class="img-fluid" alt="${element.name}" style="max-width: 170px; height: auto;">
@@ -84,6 +84,7 @@ function mostrarProducts(products) {
         console.log(`El precio es ${element.currency} ${element.cost}`);
         console.log(`${element.description}`);
         console.log(`Se han vendido: ${element.soldCount}`);
+        console.log('id:', element.id)
     });
 }
 
@@ -92,3 +93,13 @@ var nombreUsuario = localStorage.getItem('usuario');
 if (nombreUsuario) {
     document.getElementById('usuarioBarra').textContent = nombreUsuario;
 }
+
+function almacenamiento(elementId) {
+    //Guardar el id del elemento en local storage
+
+    localStorage.setItem("productId", elementId);
+
+    window.location.href = '/product-info.html';
+}
+
+
