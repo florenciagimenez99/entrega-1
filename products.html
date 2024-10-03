@@ -39,9 +39,10 @@
     </div>
   </nav>
 
-  <main class="pb-5 container">
+  <main class="pb-5_container">
     <div id="controlesFiltro" class="controls mb-4">
       <div class="mb-3">
+        <input type="search" id="searchInput" placeholder="Buscar producto" class="form-control">
         <label for="precioMin" class="form-label">Precio Mínimo:</label>
         <input type="number" id="precioMin" class="form-control" placeholder="0">
         <label for="precioMax" class="form-label mt-2">Precio Máximo:</label>
@@ -58,9 +59,7 @@
         <button id="aplicarOrden" class="btn btn-primary mt-2 control">Aplicar Orden</button>
       </div>
     </div>
-    <div>
-      <input type="search" id="searchInput" placeholder="Buscar producto">
-      </div>
+  
     <div id="mostrar"></div>
 
     <div id="cars-list"></div>
