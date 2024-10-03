@@ -106,6 +106,8 @@ if (nombreUsuario) {
 function almacenamiento(elementId) {
     //Guardar el id del elemento en local storage
     localStorage.setItem("productId", elementId);
-    window.location.href = '/product-info.html';
+
+    window.location.href = 'product-info.html';
+
 }
 

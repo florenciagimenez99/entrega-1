@@ -89,4 +89,29 @@ function mostrarProducto(producto) {
   // Set the innerHTML of the container
   container.innerHTML = card;
 
+
+ // Obtener todas las estrellas
+const estrellas = document.querySelectorAll('.estrella');
+
+// Añadir evento de clic a cada estrella
+estrellas.forEach(estrella => {
+  estrella.addEventListener('click', function() {
+    // Obtener el valor de la estrella seleccionada
+    const valorSeleccionado = this.getAttribute('data-valor');
+
+    // Resetear todas las estrellas (remover la clase 'seleccionada')
+    estrellas.forEach(e => {
+      e.classList.remove('seleccionada');
+    });
+
+    // Marcar todas las estrellas hasta la seleccionada
+    estrellas.forEach(e => {
+      if (e.getAttribute('data-valor') <= valorSeleccionado) {
+        e.classList.add('seleccionada');
+      }
+    });
+  });
+});
+
+
 }
