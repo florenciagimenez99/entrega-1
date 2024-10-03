@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   let autosId = `https://japceibal.github.io/emercado-api/products/${productId}.json`;
+  let comentariosId = `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`;
 
   let fetchJSONData = function (url) {
     let result = {};
@@ -40,6 +41,16 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error("Error al obtener los datos: ", respObj.data);
     }
   });
+
+  fetchJSONData(comentariosId).then(function (respObj) {
+    console.log(respObj); // Agrega esto para verificar los datos obtenidos
+    if (respObj.status === "ok") {
+      mostrarComentarios(respObj.data);
+    } else {
+      console.error("Error al obtener los comentarios: ", respObj.data);
+    }
+  });
+  
 });
 
 function mostrarProducto(producto) {
@@ -114,4 +125,43 @@ estrellas.forEach(estrella => {
 });
 
 
+}
+
+
+//funcion comentarios
+function mostrarComentarios(comentarios) {
+  let container = document.getElementById('mostrarComentarios');
+
+  // Generar comentarios en formato de tarjeta
+  const comentariosHTML = comentarios.map(comentario => {
+    return `
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">${comentario.user}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${new Date(comentario.dateTime).toLocaleString()}</h6>
+          <p class="card-text">${comentario.description}</p>
+          <div class="rating">
+            ${mostrarEstrellas(comentario.score)}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Insertar los comentarios en el contenedor
+  container.innerHTML = comentariosHTML;
+}
+
+function mostrarEstrellas(score) {
+  let estrellasHTML = '';
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= score) {
+      estrellasHTML += '<span class="fa fa-star checked" style="color: gold;"></span>';
+    } else {
+      estrellasHTML += '<span class="fa fa-star" style="color: gray;"></span>';
+    }
+  }
+
+  return estrellasHTML;
 }
