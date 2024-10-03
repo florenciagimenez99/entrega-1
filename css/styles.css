@@ -284,6 +284,62 @@ a {
   left: 20px;
 }
 
+#experiencia {
+  height: auto;
+  width: 300px;
+  margin-top: 20px; 
+  margin-left: 70px;
+  display: block; 
+}
+
+#experiencia p {
+  display: block; 
+  text-align: center;
+  margin-bottom: 20px; 
+  font-weight: bold;
+  color: black;
+}
+
+
+#experiencia input, textarea {
+  background-color: #d4c9c0;
+  border-radius: 10px;
+  border-style: none;
+  width: 100%; 
+  padding: 10px;
+  margin-bottom: 20px; 
+}
+
+.calificacion {
+  display: flex;
+  text-align: justify;
+  padding-top: 10px;
+}
+
+.estrella {
+  font-size: 1rem; 
+  color: rgb(187, 174, 174); 
+  border-width: 3px;
+  border-color: black,  ;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.estrella:hover,
+.estrella.seleccionada {
+  color: gold; 
+}
+
+#enviarComentario {
+  background-color: #dc7712;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border-style: none;
+  margin: 20px auto 0 auto; 
+  display: block; 
+}
+
 
 /* Resolución Estándar */
 @media screen and (min-width: 1366px) and (max-width: 768px) {
