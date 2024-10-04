@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error("Error al obtener los comentarios: ", respObj.data);
     }
   });
-  
+
 });
 
 function mostrarProducto(producto) {
@@ -101,28 +101,28 @@ function mostrarProducto(producto) {
   container.innerHTML = card;
 
 
- // Obtener todas las estrellas
-const estrellas = document.querySelectorAll('.estrella');
+  // Obtener todas las estrellas
+  const estrellas = document.querySelectorAll('.estrella');
 
-// Añadir evento de clic a cada estrella
-estrellas.forEach(estrella => {
-  estrella.addEventListener('click', function() {
-    // Obtener el valor de la estrella seleccionada
-    const valorSeleccionado = this.getAttribute('data-valor');
+  // Añadir evento de clic a cada estrella
+  estrellas.forEach(estrella => {
+    estrella.addEventListener('click', function () {
+      // Obtener el valor de la estrella seleccionada
+      const valorSeleccionado = this.getAttribute('data-valor');
 
-    // Resetear todas las estrellas (remover la clase 'seleccionada')
-    estrellas.forEach(e => {
-      e.classList.remove('seleccionada');
-    });
+      // Resetear todas las estrellas (remover la clase 'seleccionada')
+      estrellas.forEach(e => {
+        e.classList.remove('seleccionada');
+      });
 
-    // Marcar todas las estrellas hasta la seleccionada
-    estrellas.forEach(e => {
-      if (e.getAttribute('data-valor') <= valorSeleccionado) {
-        e.classList.add('seleccionada');
-      }
+      // Marcar todas las estrellas hasta la seleccionada
+      estrellas.forEach(e => {
+        if (e.getAttribute('data-valor') <= valorSeleccionado) {
+          e.classList.add('seleccionada');
+        }
+      });
     });
   });
-});
 
 
 }
@@ -165,3 +165,59 @@ function mostrarEstrellas(score) {
 
   return estrellasHTML;
 }
+
+// Desafiate:
+
+document.addEventListener('DOMContentLoaded', () => {
+  const enviarComentarioBtn = document.getElementById('enviarComentario');
+  const mostrarComentarios = document.getElementById('mostrarComentarios');
+  const estrellas = document.querySelectorAll('.estrella');
+  let calificacion = 0;
+
+  estrellas.forEach((estrella) => {
+    estrella.addEventListener('click', () => {
+      calificacion = estrella.dataset.valor;
+      estrellas.forEach((estrella) => {
+        estrella.classList.remove('checked');
+      });
+      for (let i = 0; i < calificacion; i++) {
+        estrellas[i].classList.add('checked');
+      }
+    });
+  });
+
+  enviarComentarioBtn.addEventListener('click', () => {
+    const usuario = document.getElementById('usuario').value.trim();
+    const comentario = document.getElementById('comentario').value.trim();
+
+    if (usuario && comentario && calificacion) {
+
+      const comentarioItem = document.createElement('div');
+      comentarioItem.classList.add('comentario-item', 'mb-2');
+      comentarioItem.innerHTML = `
+           
+          <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">${usuario} </h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <p class="card-text">${comentario}</p>
+          <div class="rating">
+            <span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star" style="color: gray;"></span>
+          </div>
+        </div>
+      </div>
+          `;
+
+      mostrarComentarios.appendChild(comentarioItem);
+
+      document.getElementById('usuario').value = '';
+      document.getElementById('comentario').value = '';
+      calificacion = 0;
+      estrellas.forEach((estrella) => {
+        estrella.classList.remove('checked');
+      });
+    } else {
+      alert('Por favor, completa todos los campos y selecciona una calificación.');
+    }
+  });
+});
