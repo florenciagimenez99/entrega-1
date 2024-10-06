@@ -160,53 +160,111 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = `product-info.html?id=${id}`; // Redirige al usuario
   }
 
-  function mostrarComentarios(comentarios) {
-      let container = document.getElementById('mostrarComentarios');
+//   function mostrarComentarios(comentarios) {
+//       let container = document.getElementById('mostrarComentarios');
 
-      const comentariosHTML = comentarios.map(comentario => `
-          <div class="card mb-3">
-              <div class="card-body">
-                  <h5 class="card-title">${comentario.user}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">${new Date(comentario.dateTime).toLocaleString()}</h6>
-                  <p class="card-text">${comentario.description}</p>
-                  <div class="rating">
-                      ${mostrarEstrellas(comentario.score)}
-                  </div>
-              </div>
-          </div>
-      `).join('');
+//       const comentariosHTML = comentarios.map(comentario => `
+//           <div class="card mb-3">
+//               <div class="card-body">
+//                   <h5 class="card-title">${comentario.user}</h5>
+//                   <h6 class="card-subtitle mb-2 text-muted">${new Date(comentario.dateTime).toLocaleString()}</h6>
+//                   <p class="card-text">${comentario.description}</p>
+//                   <div class="rating">
+//                       ${mostrarEstrellas(comentario.score)}
+//                   </div>
+//               </div>
+//           </div>
+//       `).join('');
 
-      container.innerHTML = comentariosHTML;
-  }
+//       container.innerHTML = comentariosHTML;
+//   }
 
-  function mostrarEstrellas(score) {
-      let estrellasHTML = '';
-      for (let i = 1; i <= 5; i++) {
-          estrellasHTML += i <= score ? 
-              '<span class="fa fa-star checked" style="color: gold;"></span>' : 
-              '<span class="fa fa-star" style="color: gray;"></span>';
+//   function mostrarEstrellas(score) {
+//       let estrellasHTML = '';
+//       for (let i = 1; i <= 5; i++) {
+//           estrellasHTML += i <= score ? 
+//               '<span class="fa fa-star checked" style="color: gold;"></span>' : 
+//               '<span class="fa fa-star" style="color: gray;"></span>';
+//       }
+//       return estrellasHTML;
+//   }
+
+//   function agregarComentario(usuario, comentario, calificacion) {
+//       const nuevoComentario = `
+//           <div class="card mb-3">
+//               <div class="card-body">
+//                   <h5 class="card-title">${usuario}</h5>
+//                   <h6 class="card-subtitle mb-2 text-muted">${new Date().toLocaleString()}</h6>
+//                   <p class="card-text">${comentario}</p>
+//                   <div class="rating">${mostrarEstrellas(calificacion)}</div>
+//               </div>
+//           </div>
+//       `;
+
+//       const container = document.getElementById('mostrarComentarios');
+//       container.innerHTML += nuevoComentario;
+
+//       // Limpiar los campos después de enviar
+//       document.getElementById('usuario').value = '';
+//       document.getElementById('comentario').value = '';
+//       document.querySelectorAll('.calificacion .estrella').forEach(star => star.classList.remove('checked'));
+//   }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const enviarComentarioBtn = document.getElementById('enviarComentario');
+  const mostrarComentarios = document.getElementById('mostrarComentarios');
+  const estrellas = document.querySelectorAll('.estrella');
+  let calificacion = 0;
+
+  estrellas.forEach((estrella) => {
+    estrella.addEventListener('click', () => {
+      calificacion = estrella.dataset.valor;
+      estrellas.forEach((estrella) => {
+        estrella.classList.remove('checked');
+      });
+      for (let i = 0; i < calificacion; i++) {
+        estrellas[i].classList.add('checked');
       }
-      return estrellasHTML;
-  }
+    });
+  });
 
-  function agregarComentario(usuario, comentario, calificacion) {
-      const nuevoComentario = `
+  enviarComentarioBtn.addEventListener('click', () => {
+    const usuario = document.getElementById('usuario').value.trim();
+    const comentario = document.getElementById('comentario').value.trim();
+
+    if (usuario && comentario && calificacion) {
+
+      const comentarioItem = document.createElement('div');
+      const estrellasHTML = Array.from({ length: 5 }, (_, index) => {
+        return `<span class="fa fa-star ${index < calificacion ? 'checked' : ''}" style="color: ${index < calificacion ? 'gold' : 'gray'};"></span>`;
+      }).join('');
+      comentarioItem.classList.add('comentario-item', 'mb-2');
+      comentarioItem.innerHTML = `
+           
           <div class="card mb-3">
-              <div class="card-body">
-                  <h5 class="card-title">${usuario}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">${new Date().toLocaleString()}</h6>
-                  <p class="card-text">${comentario}</p>
-                  <div class="rating">${mostrarEstrellas(calificacion)}</div>
-              </div>
+        <div class="card-body">
+          <h5 class="card-title">${usuario} </h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <p class="card-text">${comentario}</p>
+          <div class="rating">
+           ${estrellasHTML}
           </div>
-      `;
+        </div>
+      </div>
+          `;
 
-      const container = document.getElementById('mostrarComentarios');
-      container.innerHTML += nuevoComentario;
+      mostrarComentarios.appendChild(comentarioItem);
 
-      // Limpiar los campos después de enviar
       document.getElementById('usuario').value = '';
       document.getElementById('comentario').value = '';
-      document.querySelectorAll('.calificacion .estrella').forEach(star => star.classList.remove('checked'));
-  }
-});
+      calificacion = 0;
+      estrellas.forEach((estrella) => {
+        estrella.classList.remove('checked');
+      });
+    } else {
+      alert('Por favor, completa todos los campos y selecciona una calificación.');
+    }
+  });
+})
