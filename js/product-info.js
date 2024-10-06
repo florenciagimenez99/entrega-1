@@ -193,6 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (usuario && comentario && calificacion) {
 
       const comentarioItem = document.createElement('div');
+      const estrellasHTML = Array.from({ length: 5 }, (_, index) => {
+        return `<span class="fa fa-star ${index < calificacion ? 'checked' : ''}" style="color: ${index < calificacion ? 'gold' : 'gray'};"></span>`;
+      }).join('');
       comentarioItem.classList.add('comentario-item', 'mb-2');
       comentarioItem.innerHTML = `
            
@@ -202,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h6 class="card-subtitle mb-2 text-muted"></h6>
           <p class="card-text">${comentario}</p>
           <div class="rating">
-            <span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star checked" style="color: gold;"></span><span class="fa fa-star" style="color: gray;"></span>
+           ${estrellasHTML}
           </div>
         </div>
       </div>
