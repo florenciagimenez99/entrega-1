@@ -259,7 +259,7 @@ a {
   font-weight: 700;
   width: 200px;
   position: relative;
-  left: 150px;
+  left: 100px;
   bottom: 60px;
   border-style: none;
   
@@ -271,15 +271,29 @@ a {
   color: #dc7712;
   font-weight: 700;
   border: 3px solid #dc7712;
-
+  
 }
 
-/*.product-info-description button:focus {
+.related-products-container {
+
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.related-products-container img {
+  width: 250px;
+}
+
+
+.product-info-description button:focus {
   outline: none; 
   box-shadow: none; 
   background-color: #dc7712; 
   color: black; 
-}*/
+}
 
 .containerVendCat {
   display: flex;
@@ -296,13 +310,12 @@ a {
 
 
 
-
-
 /*crear comentario*/
 
 .container__exp {
   display: flex;
   margin: 20px;
+  
   justify-content:center
   
   
@@ -363,7 +376,11 @@ a {
   font-weight: 900px;
   display: block; 
   border: 3px solid #dc7712;
+  position: relative;
+  left: 100px;
 }
+
+
 /*secion de comentarios*/
 #mostrarComentarios{
   position: relative;
