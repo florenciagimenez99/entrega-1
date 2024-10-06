@@ -50,8 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error("Error al obtener los comentarios: ", respObj.data);
     }
   });
+<<<<<<< Updated upstream
 
 =======
+>>>>>>> Stashed changes
 });
 
 function mostrarProducto(producto) {
@@ -83,9 +85,11 @@ function mostrarProducto(producto) {
       </button>
     </div>
     <div class="product-info-description mt-4">
+<<<<<<< Updated upstream
       <div class="containerVendCat">
       </div>
 =======
+
 >>>>>>> Stashed changes
       <div class="borde">
       <h2 id="product-category">Categoría: ${producto.category}</h2>
