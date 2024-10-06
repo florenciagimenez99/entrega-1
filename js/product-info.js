@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+=======
 });
 
 function mostrarProducto(producto) {
@@ -175,6 +176,7 @@ function mostrarEstrellas(score) {
   return estrellasHTML;
 }
 
+<<<<<<< Updated upstream
 // Desafiate:
 
 document.addEventListener('DOMContentLoaded', () => {
