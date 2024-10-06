@@ -1,4 +1,5 @@
 
+
 * { 
   box-sizing: border-box;
   padding: 0;
@@ -204,7 +205,6 @@ a {
 /*PRODUCT-INFO*/
 #product-category {
   font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .product-info {
@@ -242,35 +242,44 @@ a {
   background-color: rgb(245 235 222);
   max-height: 1500px;
   width: 450px;
-  height: 350px;
+  height: 470px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   position: relative;
+  top: -25px;
+
 }
 
 .product-info-description button {
   background-color: #dc7712;
   border-radius: 10px;
-  color: black;
-  width: 300px;
-  position: absolute;
-  right: 70px;
-  bottom: 50px;
+  border: 3px solid #dc7712;
+  color: rgb(247, 246, 246);
+  font-weight: 700;
+  width: 200px;
+  position: relative;
+  left: 150px;
+  bottom: 60px;
+  border-style: none;
+  
 
 }
 
 .product-info-description button:hover {
-  background-color: #ff6600;
-  color: black;
+  background-color: transparent;
+  color: #dc7712;
+  font-weight: 700;
+  border: 3px solid #dc7712;
+
 }
 
-.product-info-description button:focus {
+/*.product-info-description button:focus {
   outline: none; 
   box-shadow: none; 
   background-color: #dc7712; 
   color: black; 
-}
+}*/
 
 .containerVendCat {
   display: flex;
@@ -281,15 +290,30 @@ a {
   width: 50px;
   background-color: rgb(245 235 222);
   position: relative;
-  left: 20px;
+  left: 300px;
+  top: -70px;
 }
 
-#experiencia {
-  height: auto;
-  width: 300px;
-  margin-top: 20px; 
-  margin-left: 70px;
-  display: block; 
+
+
+
+
+/*crear comentario*/
+
+.container__exp {
+  display: flex;
+  margin: 20px;
+  justify-content:center
+  
+  
+}
+#experiencia.borde {
+  height: 460px;
+  padding: 30px 30px;
+  width: 350px;
+  display: flex;
+  position: sticky;
+
 }
 
 #experiencia p {
@@ -335,9 +359,19 @@ a {
   width: 100px;
   height: 30px;
   border-radius: 10px;
-  border-style: none;
-  margin: 20px auto 0 auto; 
+  color: #e2e2e2;
+  font-weight: 900px;
   display: block; 
+  border: 3px solid #dc7712;
+}
+/*secion de comentarios*/
+#mostrarComentarios{
+  position: relative;
+  top: -40px;
+}
+.card-body{
+  width: 700px;
+  
 }
 
 

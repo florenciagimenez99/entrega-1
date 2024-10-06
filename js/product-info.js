@@ -69,7 +69,6 @@ function mostrarProducto(producto) {
   const card = `
   <div class="container-info mt-4">
     <div id="carouselExample" class="carousel slide pointer-event">
-      <h1 id="product-name">${producto.name}</h1>
       <div class="carousel-inner">
         ${carouselItems}
       </div>
@@ -84,12 +83,13 @@ function mostrarProducto(producto) {
     </div>
     <div class="product-info-description mt-4">
       <div class="containerVendCat">
-      <p id="sold-count">Se han vendido ${producto.soldCount}</p>
-      <h2 id="product-category">Categoría: ${producto.category}</h2>
       </div>
       <div class="borde">
+      <h2 id="product-category">Categoría: ${producto.category}</h2>
+      <h1 id="product-name">${producto.name}</h1>
         <h3 id="product-price">USD ${producto.cost}</h3>
         <p id="product-description">${producto.description}</p>
+        <p id="sold-count">Se han vendido ${producto.soldCount}</p>
         <input type="number" class="cntd" min="1"> <br>
         <button id="add-to-cart" class="btn btn-primary">AGREGAR AL CARRITO</button>
       </div>
