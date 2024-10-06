@@ -50,10 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error("Error al obtener los comentarios: ", respObj.data);
     }
   });
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 });
 
 function mostrarProducto(producto) {
@@ -85,25 +81,14 @@ function mostrarProducto(producto) {
       </button>
     </div>
     <div class="product-info-description mt-4">
-<<<<<<< Updated upstream
       <div class="containerVendCat">
       </div>
-=======
-
->>>>>>> Stashed changes
       <div class="borde">
       <h2 id="product-category">Categoría: ${producto.category}</h2>
       <h1 id="product-name">${producto.name}</h1>
         <h3 id="product-price">USD ${producto.cost}</h3>
         <p id="product-description">${producto.description}</p>
-<<<<<<< Updated upstream
         <p id="sold-count">Se han vendido ${producto.soldCount}</p>
-=======
-        <div class="containerVendCat">
-      <p id="sold-count">Se han vendido ${producto.soldCount}</p>
-    
-      </div>
->>>>>>> Stashed changes
         <input type="number" class="cntd" min="1"> <br>
         <button id="add-to-cart" class="btn btn-primary">AGREGAR AL CARRITO</button>
       </div>
@@ -180,7 +165,6 @@ function mostrarEstrellas(score) {
   return estrellasHTML;
 }
 
-<<<<<<< Updated upstream
 // Desafiate:
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -239,10 +223,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-=======
-//PRODUCTOS RELACIONADOS
-
-
-
-
->>>>>>> Stashed changes
